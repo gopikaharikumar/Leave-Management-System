@@ -40,6 +40,18 @@ public class StudentLogin extends JFrame {
 	   catch(Exception e)
 	   {JOptionPane.showMessageDialog(null, e.getMessage());}
 	   }
+	   SUBMIT.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent ae) {
+f.dispose();
+StudentProfile sp1=new StudentProfile();
+sp1.setSize(400, 300);
+
+sp1.setDefaultCloseOperation(
+JFrame.EXIT_ON_CLOSE);
+sp1.setVisible(true);
+
+}
+});
 	 }
 	
 

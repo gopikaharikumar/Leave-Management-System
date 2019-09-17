@@ -23,7 +23,30 @@ public class StudentProfile {
 	    f.add(l1);
 	    f.add(l2);
 	    f.setSize(400,400);  
-	     
+	    b1.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent ae) {
+f.dispose();
+Leaveform l1=new Leaveform();
+l1.setSize(400, 300);
+
+l1.setDefaultCloseOperation(
+JFrame.EXIT_ON_CLOSE);
+l1.setVisible(true);
+
+}
+});
+	    b2.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent ae) {
+f.dispose();
+Stayback sb1=new Stayback();
+sb1.setSize(400, 300);
+
+sb1.setDefaultCloseOperation(
+JFrame.EXIT_ON_CLOSE);
+sb1.setVisible(true);
+
+}
+});
 	    f.setVisible(true); 
 	    f.setLocationRelativeTo(null);
 	    
