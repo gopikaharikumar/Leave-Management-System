@@ -1,29 +1,57 @@
-
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 
-
-public class FacultyProfile {
+public class FacultyProfile extends JFrame {
 	
-	
-	public static void main(String []args) 
+	FacultyProfile()
 	{
-	    JFrame f=new JFrame("Student Profile");  
-	    JLabel l1= new JLabel("Name:  ");
-	    l1.setBounds(0,10,95,30);
-	    JLabel l2= new JLabel("Department:  ");
+	    JFrame f=new JFrame("Faculty Profile");  
+	    f.setSize(400,400);
+	    f.setLayout(null);
+	    JLabel l1= new JLabel("Dept:  ");
 	    
-	    JButton b1=new JButton("Leave Requests");  
-	    b1.setBounds(200,250,150,30);
-	    JButton b2=new JButton("Stayback Requests"); 
-	    b2.setBounds(200,300,170,30);
-	    f.add(b1);  
-	    f.add(b2);
-	    f.add(l1);
+	    JLabel l2= new JLabel("Name:  ");
+	    
+	    JButton b1=new JButton("Leave Requests:");  
+	   
+	    JButton b2=new JButton("Stayback Requests:");
+	    
+	    l1.setBounds(50,10,95,30);
+	    l2.setBounds(50,40,95,30);
+	    b1.setBounds(50,90,180,30);
+	    b2.setBounds(50,140,180,30);
+	
+	    f.add(l1);  
 	    f.add(l2);
-	    f.setSize(400,400);  
-	     
+	    f.add(b1);
+	    f.add(b2);
+	    
+	    b1.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent ae) {
+f.dispose();
+LeaveRequest l1=new LeaveRequest();
+l1.setSize(400, 300);
+l1.setVisible(true);
+l1.setDefaultCloseOperation(
+JFrame.EXIT_ON_CLOSE);
+
+
+}
+});
+	    b2.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent ae) {
+f.dispose();
+StaybackReq sb1=new StaybackReq();
+sb1.setSize(400, 300);
+
+sb1.setDefaultCloseOperation(
+JFrame.EXIT_ON_CLOSE);
+sb1.setVisible(true);
+
+}
+});
 	    f.setVisible(true); 
 	    f.setLocationRelativeTo(null);
 	    
@@ -32,4 +60,8 @@ public class FacultyProfile {
 	 
 	   
 	    }
+	public static void main(String[] args)
+	{
+		new FacultyProfile();
+	}
 }

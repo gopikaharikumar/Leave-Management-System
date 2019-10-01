@@ -1,32 +1,39 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 
-
-public class StudentProfile {
+public class StudentProfile extends JFrame {
 	
+	StudentProfile()
 	
-	public static void main(String []args) 
 	{
 	    JFrame f=new JFrame("Student Profile");  
+	    f.setSize(400,400);
+	    f.setLayout(null);
 	    JLabel l1= new JLabel("Roll No:  ");
-	    l1.setBounds(0,10,95,30);
+	    
 	    JLabel l2= new JLabel("Name:  ");
 	    
 	    JButton b1=new JButton("Apply for Leave");  
-	    b1.setBounds(200,250,150,30);
-	    JButton b2=new JButton("Stayback Form"); 
-	    b2.setBounds(200,300,150,30);
-	    f.add(b1);  
-	    f.add(b2);
-	    f.add(l1);
+	   
+	    JButton b2=new JButton("Stayback Form");
+	    
+	    l1.setBounds(50,10,95,30);
+	    l2.setBounds(50,40,95,30);
+	    b1.setBounds(50,90,150,30);
+	    b2.setBounds(50,140,150,30);
+	
+	    f.add(l1);  
 	    f.add(l2);
-	    f.setSize(400,400);  
+	    f.add(b1);
+	    f.add(b2);
+	    
 	    b1.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent ae) {
 f.dispose();
-Leaveform l1=new Leaveform();
+LeaveForm l1=new LeaveForm();
 l1.setSize(400, 300);
 
 l1.setDefaultCloseOperation(
@@ -55,4 +62,7 @@ sb1.setVisible(true);
 	 
 	   
 	    }
+	public static void main(String []args) {
+		new StudentProfile();
+	}
 }
